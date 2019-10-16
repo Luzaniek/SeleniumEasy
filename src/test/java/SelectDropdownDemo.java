@@ -25,7 +25,8 @@ public class SelectDropdownDemo {
     public void setUp() {
 
         System.setProperty("webdriver.gecko.driver",
-                "src/resources/geckodriver.exe");
+                "src/main/resources/geckodriver.exe");
+
 
         driver = new FirefoxDriver();
 
