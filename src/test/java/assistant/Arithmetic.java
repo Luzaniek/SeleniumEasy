@@ -5,17 +5,21 @@ import java.util.Random;
 public class Arithmetic {
 
 
+    Random valueGenerator = new Random();
 
+    public int randomValueCheckBox() {
 
-    public int randomValueCheckBox(){
-
-        Random valueGenerator = new Random();
         int randomValueForCheckBox = valueGenerator.nextInt(2);
 
         return randomValueForCheckBox;
+    }
 
 
+    public int randomStategenerator(int k) {
 
+        int randomState = valueGenerator.nextInt(k);
+
+        return randomState;
     }
 
 
@@ -24,8 +28,6 @@ public class Arithmetic {
 
         int suma = k + m;
         return suma;
-
-
     }
 
 
