@@ -46,15 +46,10 @@ public class SimpleFormDemoTest {
         driver.get(urlSDT);
         driver.manage().window().maximize();
 
-
-        System.out.println(suma);
         StartPages sp = new StartPages(driver);
         sp.startSeleniumEasyPages();
 
-
-
-
-
+        
         WebElement simpleFormDemoButton = driver.findElement(By.linkText("Simple Form Demo"));
         simpleFormDemoButton.click();
 
@@ -131,7 +126,7 @@ public class SimpleFormDemoTest {
         System.out.println("wpisano " + number1 + " do inputa pierwszego");
         inputNumber2.click();
         String textinputnumber2 = inputNumber2.getText();
-        assertEquals(textinputnumber2,emptyString);
+        assertEquals(textinputnumber2, emptyString);
         inputNumber2.sendKeys(number2);
         System.out.println("Wpisano " + number2 + " do inputa drugiego");
 
@@ -146,7 +141,7 @@ public class SimpleFormDemoTest {
         assertTrue(sum.isEnabled());
         String sumdisplayed = sum.getText();
         System.out.println("The sum displayed to " + sumdisplayed);
-        assertEquals(sumdisplayed,suman1n2);
+        assertEquals(sumdisplayed, suman1n2);
 
 
     }
