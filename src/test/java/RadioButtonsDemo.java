@@ -29,7 +29,6 @@ public class RadioButtonsDemo {
         driver = new FirefoxDriver();
     }
 
-
     @Test
     public void radioButtonsDemoTest() throws InterruptedException {
         driver.get(urlSeleniumEasy);
@@ -71,7 +70,6 @@ public class RadioButtonsDemo {
 
         System.out.println(checkText2);
         assertEquals(checkText2, radioButtonNotChecked);
-
 
         // Checking the Male button
         assertTrue(checkBoxMale.isEnabled());

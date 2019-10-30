@@ -55,7 +55,6 @@ public class InputFormDemo {
         sp.startSeleniumEasyPages();
 
 
-        
         WebElement proceedNext = driver.findElement(By.id("btn_inter_example"));
         assertTrue(proceedNext.isEnabled());
         proceedNext.click();

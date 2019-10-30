@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
+import startPages.StartPages;
 
 import java.util.List;
 
@@ -37,10 +38,9 @@ public class AlertBoxDemo {
 
     @Test
     public void testSelectDropdownDemo() throws InterruptedException {
-        driver.get(urlSeleniumEasy);
-        driver.manage().window().maximize();
-        driver.findElement(By.linkText("Demo Website!")).click();
-        driver.findElement(By.id("home")).findElement(By.id("btn_basic_example")).click();
+        StartPages sp = new StartPages(driver);
+        sp.startSeleniumEasyPages();
+
         driver.findElement(By.linkText("Javascript Alerts")).click();
 
         WebElement alertBox = driver.findElement(By.cssSelector("button[onclick='myAlertFunction()']"));
