@@ -43,13 +43,13 @@ public class SimpleFormDemoTest {
 
     @Test
     public void TestSimpleFormDemo() throws InterruptedException {
-        driver.get(urlSDT);
-        driver.manage().window().maximize();
+//        driver.get(urlSDT);
+//        driver.manage().window().maximize();
 
         StartPages sp = new StartPages(driver);
         sp.startSeleniumEasyPages();
 
-        
+
         WebElement simpleFormDemoButton = driver.findElement(By.linkText("Simple Form Demo"));
         simpleFormDemoButton.click();
 
