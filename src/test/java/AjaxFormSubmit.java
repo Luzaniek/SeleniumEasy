@@ -1,6 +1,5 @@
 import assistant.Arithmetic;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -8,25 +7,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
-import sun.awt.windows.ThemeReader;
-
-
-import javax.swing.*;
-import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class InputFormDemo {
+public class AjaxFormSubmit {
+
 
 
     WebDriver driver;
     String urlSDT = "https://www.seleniumeasy.com";
     String emptyString = "";
     String userMessage = "Ala ma kota";
-    String inputFormText = "Input Form with Validations";
-    String InputFormUrlShort = "input-form-demo.html";
+    String ajaxFormSubmit = "Ajax Form Submit";
+     String inputFormText = "Input Form with Validations";
+    String AjaxFormSubmitUrlShort = "ajax-form-submit-demo.html";
     String firstName = "Ala";
     String lastName = "Kicia";
     String email = "ala@kicia.com";
@@ -49,7 +45,7 @@ public class InputFormDemo {
     }
 
     @Test
-    public void TestSimpleFormDemo() throws InterruptedException {
+    public void TestAjaxFormSubmitDemo() throws InterruptedException {
         driver.get(urlSDT);
         driver.manage().window().maximize();
 
@@ -58,13 +54,13 @@ public class InputFormDemo {
         WebElement proceedNext = driver.findElement(By.id("btn_inter_example"));
         assertTrue(proceedNext.isEnabled());
         proceedNext.click();
-        WebElement inputForm = driver.findElement(By.linkText(inputFormText));
+        WebElement inputForm = driver.findElement(By.linkText(ajaxFormSubmit));
         assertTrue(inputForm.isEnabled());
         inputForm.click();
         Thread.sleep(1000);
         String InputFormUrl = driver.getCurrentUrl();
         System.out.println(InputFormUrl);
-        assertTrue(InputFormUrl.contains(InputFormUrlShort));
+        assertTrue(InputFormUrl.contains(AjaxFormSubmitUrlShort));
         System.out.println("Assercja urlu przeszła");
 
         // Testowanie pola First Name

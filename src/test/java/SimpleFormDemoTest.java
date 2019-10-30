@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import startPages.StartPages;
 
 
 import static org.junit.Assert.assertEquals;
@@ -47,15 +48,12 @@ public class SimpleFormDemoTest {
 
 
         System.out.println(suma);
+        StartPages sp = new StartPages(driver);
+        sp.startSeleniumEasyPages();
 
-        WebElement demoButton = driver.findElement(By.linkText("Demo Website!"));
-        demoButton.click();
-        // udane wejście na stronę Demo
 
-        WebElement practiseButton = driver.findElement(By.id("btn_basic_example"));
-        practiseButton.click();
 
-        System.out.println("Udane wejście na stronę ćwiczeń");
+
 
         WebElement simpleFormDemoButton = driver.findElement(By.linkText("Simple Form Demo"));
         simpleFormDemoButton.click();
