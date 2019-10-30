@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
+import startPages.StartPages;
 import sun.awt.windows.ThemeReader;
 
 
@@ -50,11 +51,11 @@ public class InputFormDemo {
 
     @Test
     public void TestSimpleFormDemo() throws InterruptedException {
-        driver.get(urlSDT);
-        driver.manage().window().maximize();
+        StartPages sp = new StartPages(driver);
+        sp.startSeleniumEasyPages();
 
-        driver.findElement(By.linkText("Demo Website!")).click();
-        driver.findElement(By.id("home")).findElement(By.id("btn_basic_example")).click();
+
+        
         WebElement proceedNext = driver.findElement(By.id("btn_inter_example"));
         assertTrue(proceedNext.isEnabled());
         proceedNext.click();

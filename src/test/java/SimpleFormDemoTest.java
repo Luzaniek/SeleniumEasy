@@ -17,7 +17,7 @@ public class SimpleFormDemoTest {
 
 
     WebDriver driver;
-    String urlSDT = "https://www.seleniumeasy.com";
+
     String emptyString = "";
     String userMessage = "Ala ma kota";
 
@@ -36,19 +36,14 @@ public class SimpleFormDemoTest {
         System.setProperty("webdriver.gecko.driver",
                 "src/main/resources/geckodriver.exe");
 
-
         driver = new FirefoxDriver();
-
     }
 
     @Test
     public void TestSimpleFormDemo() throws InterruptedException {
-//        driver.get(urlSDT);
-//        driver.manage().window().maximize();
 
         StartPages sp = new StartPages(driver);
         sp.startSeleniumEasyPages();
-
 
         WebElement simpleFormDemoButton = driver.findElement(By.linkText("Simple Form Demo"));
         simpleFormDemoButton.click();
@@ -66,7 +61,6 @@ public class SimpleFormDemoTest {
         userMessageInput.click();
         userMessageInput.sendKeys(userMessage);
         System.out.println("Wpisano: " + userMessage);
-
 
         WebElement showMessageButton = driver.findElement(By.cssSelector("button[class='btn btn-default']"));
         //By.xpath("//span[@class='second']"

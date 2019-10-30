@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
+import startPages.StartPages;
 
 import java.util.List;
 
@@ -17,9 +18,8 @@ public class SelectDropdownDemo {
 
     WebDriver driver;
 
-    String urlSeleniumEasy = "https://www.seleniumeasy.com";
-    String selectDropdownList = "Select Dropdown List";
 
+    String selectDropdownList = "Select Dropdown List";
 
     @Before
     public void setUp() {
@@ -32,13 +32,13 @@ public class SelectDropdownDemo {
 
     }
 
-
     @Test
     public void testSelectDropdownDemo() throws InterruptedException {
-        driver.get(urlSeleniumEasy);
-        driver.manage().window().maximize();
-        driver.findElement(By.linkText("Demo Website!")).click();
-        driver.findElement(By.id("home")).findElement(By.id("btn_basic_example")).click();
+
+        StartPages sp = new StartPages(driver);
+        sp.startSeleniumEasyPages();
+
+
         driver.findElement(By.linkText("Select Dropdown List")).click();
 
         WebElement selectDay = driver.findElement(By.id("select-demo"));
@@ -71,12 +71,6 @@ public class SelectDropdownDemo {
             assertTrue(selectedDayName.contains(elementName));
             Thread.sleep(2000);
         }
-
-
-
-
-
-
 
 
     }
